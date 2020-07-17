@@ -29,13 +29,13 @@ data.txt contain 200 galaxies.
 
 ---
 to run the code: 
-'''
+```
 bash photoz.csh 
-'''
+```
 or preferably(to be able to kill the process if anything went wrong)  screen it via:
-'''
+```
 screen -S photoz -dm bash photoz.csh
-'''
+```
 
 outputs will be saved in 'probPlots' and 'outputs' directories which will be produced after running the code
 the output folder will contain .pickle files for later analytic purposes
