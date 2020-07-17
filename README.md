@@ -27,15 +27,15 @@ the data.txt which is the input file is organized as follows:
 these galaxies and their photometry are selected from HSC 5-band grizy, and are selected to be in the redshift range 1 to 3. 
 data.txt contain 200 galaxies. 
 
---
+---
 to run the code: 
-,,,
+'''
 bash photoz.csh 
-,,,
+'''
 or preferably(to be able to kill the process if anything went wrong)  screen it via:
-,,,
+'''
 screen -S photoz -dm bash photoz.csh
-,,,
+'''
 
 outputs will be saved in 'probPlots' and 'outputs' directories which will be produced after running the code
 the output folder will contain .pickle files for later analytic purposes
@@ -51,7 +51,7 @@ first sigma is defined as the abs(spectroscopic redshift - photometric redshift)
 the first sigma and outlier fraction are defined similar to Tanaka et al. 2017 (https://arxiv.org/abs/1704.05988)
 the results you get here from my code are comparable to those of Tanaka et al. 2017, which has been performed on the same survey, but for comparably lower redshift galaxies.
 
---
+---
 For more information refer to the thesis at: 
 
 
