@@ -3,7 +3,7 @@ matplotlib.use('Agg')
 import numpy
 import matplotlib.pyplot as plot
 
-#this is a very simple code for plotting purposes
+#this is a simple code for plotting purposes
 f = open('../data.txt','r')
 lines = f.readlines()
 f.close()
