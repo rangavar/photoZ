@@ -38,10 +38,10 @@ screen -S photoz -dm bash photoz.csh
 
 Outputs will be saved in 'probPlots' and 'outputs' directories which will be produced after running the code. The output folder will contain .pickle files for later analytic purposes. The probPlots folder will contain:
 
-the redshift PDF for each galaxy as galaxyID.pdf<br>
-numerical redshift PDF for each galaxy as galaxyID.txt<br>
-estimated photometric redshifts plotted against spectroscopic redshifts as wrap.txt<br>
-outlier.txt containing the outlier fraction and the first sigma of the experiment<br>
+- the redshift PDF for each galaxy as galaxyID.pdf<br>
+- numerical redshift PDF for each galaxy as galaxyID.txt<br>
+- estimated photometric redshifts plotted against spectroscopic redshifts as wrap.txt<br>
+- outlier.txt containing the outlier fraction and the first sigma of the experiment<br>
 
 Outliers are defined as abs(spectroscopic redshift - photometric redshift)/(1+spectroscopic redshift)>0.15. The first sigma and outlier fraction are defined similar to Tanaka et al. 2017 (https://arxiv.org/abs/1704.05988). 
 
