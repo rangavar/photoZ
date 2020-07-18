@@ -3,7 +3,7 @@ mkdir probPlots #folder to save the probability distribution function for each o
 
 python estimateMulticore.py #produce multiple copies of the core (50 copies in this setting) to make it possible to run the code on 50 cores parallel
 
-#run the aformentioned codes (which are saved as icore,py at the same time
+#run the aformentioned codes (which are saved as $i$core.py at the same time
 for i in {0..49};do
 	python ${i}core.py &
 done
