@@ -4,6 +4,7 @@ This script is what I use to estimate the redshift of the source galaxy in stron
 
 https://www.dropbox.com/sh/3r4z4cfjvn15k77/AABnnd4NvzSJ9RB4TVT05aNxa?dl=0
 
+(one needs to download these templates to the main directory of the code. a simple download of the whole dropbox directory, which contains the scripts as well, is sufficient)
 By default, it is optimized to run on 50 cores, but one can change that easily in estimateMulticore123.py and photoz.csh. 
 
 ---
