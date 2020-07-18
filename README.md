@@ -11,7 +11,7 @@ By default, it is optimized to run on 50 cores, but one can change that easily i
 This is a Bayesian likelihood estimator of photometric redshift. Given 5-band magnitude measurements, with the corresponding error bars in data.txt, this code calculates the redshift PDF for each galaxy and compares it with the spectroscopic redshift. 
 
 The data.txt, which is the input file, is organized as follows: 
-1st row: ID
+1st row: ID<br>
 2nd row: g-band magnitude 
 3rd row: g-band uncertainty
 4th row: r-band magnitude
