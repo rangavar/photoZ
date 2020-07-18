@@ -1,4 +1,4 @@
-#reading the estimate.py, which is responsible for  estimating the photometric redshift on one cpu core (one object)
+#reading the estimate.py, responsible for  estimating the photometric redshift on one cpu core (one object)
 f = open('estimate.py','r')
 lines = f.readlines()
 f.close()
