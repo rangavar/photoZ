@@ -79,7 +79,8 @@ for n in range(nsim):
         print(zs_template[z])
         
         for t in range(len(tn_template)): #marginalizing over tn: marginalizing over template number. this is the parameter we are not interested in, so we marginalize over it to achieve a probability distribution for redshift
-    
+            
+            #for the purpose of finding the 1sigma uncertainties
             up = 0.
             down = 0.
 
