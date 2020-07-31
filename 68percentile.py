@@ -10,7 +10,7 @@ f.close()
 
 names = []
 specz = []
-for line in lines[0:200]:
+for line in lines:
     line = line.split(' ')
     names.append(line[0])
     specz.append(float(line[-1]))
