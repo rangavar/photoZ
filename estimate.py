@@ -8,7 +8,7 @@ import pickle
 import random
 import matplotlib.pyplot as plot
 
-nsim = 2 #sets the number of objects ran on each cpu core: here 4. means it is going to estimate the photometric redshift for 4 objects on this core
+nsim = 4 #sets the number of objects ran on each cpu core: here 4. means it is going to estimate the photometric redshift for 4 objects on this core
 coreNumber = 0 #set an ID-number to the core, for future identification purposes
 
 #Setting the grid points which are going to be used to estimate the likelihood of redshift in the future
