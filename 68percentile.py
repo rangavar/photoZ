@@ -3,7 +3,7 @@ matplotlib.use('Agg')
 import numpy
 import matplotlib.pyplot as plot
 
-#this is a simple code for plotting purposes
+#this is a very simple code for plotting purposes
 f = open('../data.txt','r')
 lines = f.readlines()
 f.close()
@@ -23,7 +23,7 @@ for name in names:
     f.close()
 
     pdf[name] = []
-    
+
     photoz.append(float(lines[2]))
 
     for line in lines[4:]:
@@ -34,11 +34,11 @@ bottom = []
 for name in names:
     prob = []
     prob = pdf[name]
-    
+
     sum = 0
     for p in prob:
         sum = sum + p
-    
+
     down = sum * 0.16
     up = sum * 0.84
     newSum = 0
@@ -46,17 +46,17 @@ for name in names:
         newSum = newSum + prob[i]
         if newSum > down:
             #bottom.append(1.+(i-2)*0.01)
-	    bottom.append((i-2)*0.01)
+            bottom.append((i-2)*0.01)
             break
-    
+
     newSum = 0
     for i in range(len(prob)):
         newSum = newSum + prob[i]
         if newSum > up:
             #top.append(1.+(i+1)*0.01)
             top.append((i+1)*0.01)
-	    break
-          
+            break
+
 
 ###This is for switching between maximum likelihood z and median.
 photoz = []
@@ -109,7 +109,7 @@ error = []
 for i in range(len(names)):
     error.append(abs(specz[i]-photoz[i])/(1.+specz[i]))
     if abs(specz[i]-photoz[i])/(1.+specz[i]) > 0.15:
-    	outlier.append(names[i])
+        outlier.append(names[i])
 
 outlierFraction = float(float(len(outlier))/float(len(names)))
 print(outlierFraction)
