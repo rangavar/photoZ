@@ -8,7 +8,7 @@ import pickle
 import random
 import matplotlib.pyplot as plot
 
-nsim = 4 #sets the number of objects ran on each cpu core: here 4. means it is going to estimate the photometric redshift for 4 objects on this core
+nsim = 5 #sets the number of objects ran on each cpu core: here 4. means it is going to estimate the photometric redshift for 4 objects on this core
 coreNumber = 0 #set an ID-number to the core, for future identification purposes
 
 #Setting the grid points which are going to be used to estimate the likelihood of redshift in the future
@@ -41,7 +41,7 @@ for band in bands:
 name = [] #ID
 specz = [] #spectroscopic redshift 
 n = 0
-for i in range(coreNumber*4,(coreNumber+1)*4):
+for i in range(coreNumber*nsim,(coreNumber+1)*nsim):
     name.append(lines[i].split(' ')[0])
 
     source_mags['g'][n] = float(lines[i].split(' ')[1])
@@ -75,12 +75,11 @@ xaiCatalogue = {}
 for n in range(nsim):
 
     for z in range(len(zs_template)):
-        
+
         print(zs_template[z])
-        
+
         for t in range(len(tn_template)): #marginalizing over tn: marginalizing over template number. this is the parameter we are not interested in, so we marginalize over it to achieve a probability distribution for redshift
-            
-            #for the purpose of finding the 1sigma uncertainties
+
             up = 0.
             down = 0.
 
@@ -105,7 +104,7 @@ for n in range(nsim):
     pZ = {}
 
     for z in range(len(zs_template)):
-        
+
         sumPOverTN = 0.
 
         for t in range(len(tn_template)):
@@ -123,10 +122,10 @@ for n in range(nsim):
         #plot.scatter( zs_template[i] , pZ['%.2f'%zs_template[i]] )
         probs.append( pZ['%.2f'%zs_template[i]] )
         probSum = probSum + pZ['%.2f'%zs_template[i]]
-    
+
     for i in range(len(zs_template)):
         probs[i] = probs[i] * (1./probSum)
-    
+
     plot.plot(zs_template,probs)
     plot.axvline(x=specz[n])
     plot.xlabel('z')
@@ -144,7 +143,7 @@ for n in range(nsim):
 
     f = open('probPlots/%sprob.txt'%name[n],'w')
     f.writelines(lines)
-    f.close() 
+    f.close()
 
 #saving dictionaries
 with open('outputs/%smaxL.pickle'%coreNumber, 'wb') as handle:
