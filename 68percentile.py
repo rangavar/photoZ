@@ -114,9 +114,9 @@ for i in range(len(names)):
 outlierFraction = float(float(len(outlier))/float(len(names)))
 print(outlierFraction)
 sortedError = numpy.sort(error)
-print(sortedError[136])
+print(sortedError[int(.68*len(names))])
 
-lines = 'outlier fraction = %s\nfirst sigma = %s'%(outlierFraction,sortedError[136])
+lines = 'outlier fraction = %s\nfirst sigma = %s'%(outlierFraction,sortedError[int(.68*len(names))])
 
 f = open('outlier.txt','w')
 f.writelines(lines)
