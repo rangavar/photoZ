@@ -12,7 +12,7 @@ nsim = 4 #sets the number of objects ran on each cpu core: here 4. means it is g
 coreNumber = 0 #set an ID-number to the core, for future identification purposes
 
 #Setting the grid points which are going to be used to estimate the likelihood of redshift in the future
-tn_template = np.arange(0.,7.,0.001) #producing the tn grids with required resoultion 0.001.
+tn_template = np.arange(3.,7.,0.001) #producing the tn grids with required resoultion 0.001.
 zs_template = np.arange(0.,5.,0.01) #producing the zs grids with required resoultion 0.001. For this experiment .01 is enough resolution on redshift
 
 #loading the photometry templates, which are previously produced and saved as .pickle. Multi-band photometry template can be parametrized with only two parameters: spectroscopic redshift (zs) and template number (tn). Saving them in templateScale
