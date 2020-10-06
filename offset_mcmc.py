@@ -11,9 +11,9 @@ os.mkdir('dump')
 fileName = 'noncorrectedMags'
 nBands = 5
 ndim = nBands
-nwak = 10
+nwak = 20
 nsteps = 100
-objects = 100
+objects = 500
 
 #producing a new input file - only first object_number of objects
 f = open('%s_original.txt'%fileName,'r')
@@ -35,24 +35,24 @@ def log_prob(par,truth):
     y_off = par[4]
 
     newFileName = '%1.5f_%1.5f_%1.5f_%1.5f_%1.5f' %(g_off,r_off,i_off,z_off,y_off)
-    
+
     #reading the bpz .columns file to modify it with the new offsets
     f = open('%s.columns'%fileName,'r')
     lines = f.readlines()
     f.close()
 
-    lines[1] = 'HSC-g                 2, 3   AB        0.01     %s\n' %g_off
-    lines[2] = 'HSC-r                 4, 5   AB        0.01     %s\n' %r_off
-    lines[3] = 'HSC-i                 6, 7   AB        0.01     %s\n' %i_off
-    lines[4] = 'HSC-z                 8, 9   AB        0.01     %s\n' %z_off
-    lines[5] = 'HSC-y                10,11   AB        0.01     %s\n' %y_off
+    lines[1] = 'KiDSVIKING_g2         2, 3   AB        0.01     %s\n' %g_off
+    lines[2] = 'KiDSVIKING_r2         4, 5   AB        0.01     %s\n' %r_off
+    lines[3] = 'KiDSVIKING_i2         6, 7   AB        0.01     %s\n' %i_off
+    lines[4] = 'KiDSVIKING_Z2         8, 9   AB        0.01     %s\n' %z_off
+    lines[5] = 'KiDSVIKING_Y2        10,11   AB        0.01     %s\n' %y_off
 
     f = open('dump/%s.columns'%newFileName,'w')
     f.writelines(lines)
     f.close()
 
     os.system('python2.7 $BPZPATH/bpz.py dump/%s.txt -INTERP 2 -COLUMNS dump/%s.columns -OUTPUT dump/%s.bpz'%(fileName,newFileName,newFileName))
-    
+
     f = open('plot.py','r')
     lines = f.readlines()
     f.close()
@@ -114,4 +114,4 @@ for i in range(nBands):
     plt.hist((samples[:,i]),nwak,color="k",histtype="step")
     #plt.xscale('log')
     plt.savefig('%s_parameter.png'%bands[i])
-    plt.close()  
+    plt.close()
